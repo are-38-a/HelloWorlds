@@ -14,8 +14,41 @@
             // console.logを使う
             console.log("Hello World!")
             
-            //今は使ってはいけない方法
+            // 今は使ってはいけない
             document.write("Hello World!");
+
+            var array_number = new Array(5);
+
+            // 範囲指定してランダムな整数を得るのが少し面倒
+            // この関数は最小値以上最大値未満の整数を返す
+            function getRandomInt(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min) + min);
+            }
+
+            for(let i=0; i<5; i++) {
+                array_number[i] = getRandomInt(0,101)
+            }
+
+            let sum_number = array_number.reduce(function(sum, element){
+                return sum + element;
+            }, 0);
+
+            // こうでもいい
+            // let sum_number = array_number.reduce((sum, element) => sum + element, 0);
+
+            if (sum_number%3 == 0 && sum_number%5 == 0){
+                res = "FizzBuzz";
+            } else if (sum_number%3 == 0) {
+                res = "Fizz";
+            } else if (sum_number%5 == 0) {
+                res = "Buzz";
+            } else {
+                res = sum_number;
+            }
+
+            console.log(res)
        　</script>
     </body>
 
