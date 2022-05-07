@@ -8,6 +8,23 @@
 
     <body>
         <?php
+            // 関数定義の練習
+            function FizzBuzz (int $sum_number): string{
+                if ($sum_number%3 == 0 && $sum_number%5 == 0){
+                    return "FizzBuzz";
+                } elseif ($sum_number%3 == 0) {
+                    return "Fizz";
+                } elseif ($sum_number%5 == 0) {
+                    return "Buzz";
+                } else {
+                    return (string) $sum_number;
+                    /*
+                    $sum_numberをそのまま返すとintなのでエラーになる
+                    (返り値の型を宣言しているため)
+                    */
+                }
+            }
+
             echo "Hello World！"."\n";
 
             // PHPの配列は連想配列
@@ -18,18 +35,9 @@
             }
             
             $sum_number = array_sum($array_number);
-
-            if ($sum_number%3 == 0 && $sum_number%5 == 0){
-                $res = "FizzBuzz";
-            } elseif ($sum_number%3 == 0) {
-                $res = "Fizz";
-            } elseif ($sum_number%5 == 0) {
-                $res = "Buzz";
-            } else {
-                $res = $sum_number;
-            }
-
-            echo $res."\n"
+            
+            $res = FizzBuzz($sum_number);
+            echo $res."\n";
         ?>
     </body>
 
