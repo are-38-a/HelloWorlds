@@ -52,7 +52,8 @@
             // こうでもいい
             // let sum_number = array_number.reduce((sum, element) => sum + element, 0);
 
-            res = FizzBuzz(sum_number)   
+            // この場合varがなくても動くが、グローバルスコープになるためよくない
+            var res = FizzBuzz(sum_number)   
 
             console.log(res)
        　</script>
