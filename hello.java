@@ -51,5 +51,4 @@ public class hello{
         }
     }
 
-    // 配列の合計する関数
 }
